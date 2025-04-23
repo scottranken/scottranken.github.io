@@ -6,14 +6,32 @@ date:   2025-04-23 06:00:00 +0000
 categories: jekyll update
 ---
 
-<div id="digital-rain-container" style="text-align: center; margin: 2rem 0; height: 400px;"></div>
+<div id="digital-rain-container"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
 <script src="/assets/digital-rain.js"></script>
 
 <!-- Round the canvas corners -->
 <style>
+  #digital-rain-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    height: 400px;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
   #digital-rain-container canvas {
-	border-radius: 12px;
+    border-radius: 12px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 600px) {
+    #digital-rain-container {
+      height: 300px; 
+    }
   }
 </style>
 
