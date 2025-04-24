@@ -17,7 +17,7 @@ categories: jekyll update
   }
 </style>
 
-An interpretation of the digital rain effect as seen in The Matrix films, written in JavaScript using the p5.js library.
+Creating the digital rain effect as seen in The Matrix films, written in JavaScript using the p5.js library.
 
 <br>
 
