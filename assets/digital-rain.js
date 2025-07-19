@@ -18,8 +18,10 @@
  *           random chance that the first symbol in a stream will be coloured white.
  */
 
-const maxStreams             = 20;
-const canvasX                = 400;
+// Changing from const to lets. Adjust these values for mobile devices
+let maxStreams               = 20;
+let canvasX                  = 400;
+
 const canvasY                = 400;
 const symbolSize             = 20;
 const streamLength           = 25;
@@ -218,14 +220,42 @@ function maintainMatrixStreams() {
   }
 }
 
+// Check if a mobile device is running digital rain.
+function isMobileDevice() {
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+}
+
+// Check if a small screen is running digital rain.
+function isSmallScreen() {
+  return window.innerWidth <= 768; // arbitrary mobile threshold
+}
+
+// Final mobile device check.
+function isMobile() {
+  return isMobileDevice() || isSmallScreen();
+}
+
 // Initialises the canvas and matrix streams.
 function setup() {
+  
+  // Reduce canvas size, total streams and set pixelDensity to improve
+  // performance on mobile devices. Also avoid capping the frame rate.
+  if (isMobile())
+  {
+	maxStreams    = 10;
+    canvasX       = 200;
+	pixelDensity(1);
+  }
+  else
+  {
+	frameRate(20);
+  }
+  
   let canvas = createCanvas(canvasX, canvasY);
   canvas.parent('digital-rain-container'); // This attaches it to a specific div
   
   createMatrixStreams();
   noStroke();
-  frameRate(20);
 }
 
 // Continuously renders the digital rain effect.
