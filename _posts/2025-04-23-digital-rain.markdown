@@ -23,7 +23,7 @@ Creating the digital rain effect as seen in The Matrix films, written in JavaScr
 
 Two classes were created to achieve this effect: `Symbols` and `Stream`. The `Symbols` class contains the properties for each individual symbol: x, y, character, RGB, alpha, etc.
 
-The `Stream` class contains a series of `Symbols` positioned down the canvas's Y axis. Streams are created along the canvas's X axis, populating the entire 400x400 canvas.
+The `Stream` class contains a series of `Symbols` positioned down the canvas's Y axis. Streams are created along the canvas's X axis, populating the entire canvas.
 
 The rain effect is achieved by manipulating each symbol’s alpha value within a stream. None of the symbols move within the canvas; it is purely the alpha values that create the effect. Each symbol’s alpha value is set to 0 on creation.
 A ‘peak’ alpha index is maintained, representing the leading symbol in a stream with an alpha value of 255.
