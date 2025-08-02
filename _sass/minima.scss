@@ -29,6 +29,16 @@ $table-text-align: left !default;
     margin: 0 auto;
 }
 
+.wide-code {
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    width: 100vw;
+    padding: 1em;
+}
+
 // Background colour
 body {
     background-color: rgb(254, 254, 254) !important;
