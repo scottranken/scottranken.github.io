@@ -38,12 +38,12 @@ Implementing *[Conway's Game of Life][game-of-life-wkp]*, written in C# using th
 
 <br>
 
-Three classes were created to implement *Conway's Game of Life* in Godot: `Cell`, `Grid`, and `GridUI`. The `Cell` class contains the properties for each individual cell: x, y, width, height, RGB, alive state, etc. Each cell is a `ColorRect` type object.
+Three classes were created to implement *Conway's Game of Life* in Godot: `Cell`, `Grid`, and `GridUI`. The `Cell` class contains the properties for each individual cell: x, y, width, height, RGB, alive state, etc. Each cell is a `ColorRect` object type.
 
 The `Grid` class creates the background and lines that make up the grid.
 
 
-The `GridUI` class connects all of the UI elements in Godot and allows the Game of Life state to be manipulated. These elements include: a slider for the time between generations, a pause/play button, a reset button, and a spinbox to enter the starting alive percentage for cell creation.
+The `GridUI` class connects all of the UI elements in Godot and allows the game state to be manipulated. These elements include: a slider for the time between generations, a pause/play button, a reset button, and a spinbox to enter the starting alive percentage for cell creation.
 
 Each cell is created once, and only its alpha value changes to represent its dead or alive state. This avoids the overhead of creating and deleting cells every frame. 
 
