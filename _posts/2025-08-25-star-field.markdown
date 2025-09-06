@@ -21,7 +21,7 @@ Creating a starfield effect, written in JavaScript using the pixi.js library.
 
 <br>
 
-A single class was created to achieve this effect: `Star`. This class creates a star and updates its position. The `starfield` array contains 750 stars.
+A single class was created to achieve this effect: `Star`. This class creates a star and updates its position. The `starfield` array contains 500 stars.
 
 Each star is drawn as a line. The line’s length, or trail, represents the warp speed and is determined by the slider’s `warpSpeed` value. When `warpSpeed` is set to 1, stars are drawn as circles so they appear as single points without trails and to eliminate unwanted small trails at low warp speeds.
 
@@ -56,7 +56,7 @@ update(deltaMS) {
   // Stars are drawn as lines whose length depends on warpSpeed. When warpSpeed is 
   // equal to one, stars are drawn as circles instead to avoid small unwanted trails. 
   if (warpSpeed == 1){
-    graphics.circle(prevStarX, prevStarY, 0.3).stroke({ color: 0xffffff, pixelLine: true });
+    graphics.circle(prevStarX, prevStarY, 0.25).stroke({ color: 0xffffff, pixelLine: true });
   }else{
     graphics.moveTo(prevStarX, prevStarY).lineTo(trailX, trailY).stroke({ color: 0xffffff, pixelLine: true });
   }
